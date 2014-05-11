@@ -1,10 +1,13 @@
 Router.configure(
-	layoutTemplate: 'layout'
+  layoutTemplate: 'layout'
+  loadingTemplate: 'loading'
+  waitOn: ->
+    Meteor.subscribe('posts')
 )
 
 Router.map( ->
-	this.route(
-		'postsList'
-		{ path: '/' }
-	)
+  this.route(
+    'postsList'
+    { path: '/' }
+  )
 )
