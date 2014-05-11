@@ -1,0 +1,11 @@
+<template name="header">
+	<header class="navbar">
+  	<div class="navbar-inner">
+      <a class="brand" href="{{pathFor 'postsList'}}">Microscope</a>
+      <ul class="nav pull­-right">
+        <li><a href="{{pathFor 'postSubmit'}}"> New </a></li>
+        <li>{{> loginButtons}}</li>
+      </ul>
+  	</div>
+  </header>
+</template>

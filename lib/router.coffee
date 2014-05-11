@@ -10,4 +10,18 @@ Router.map( ->
     'postsList'
     { path: '/' }
   )
+  this.route(
+    'postPage'
+    {
+      path: 'posts/:_id'
+      data: ->
+        Posts.findOne(this.params._id)
+    }
+  )
+  this.route(
+    'postSubmit'
+    {
+      path: '/submit'
+    }
+  )
 )
