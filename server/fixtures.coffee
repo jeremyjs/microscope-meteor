@@ -14,7 +14,13 @@ postsData = [
         author: 'Tom Coleman'
         url: 'http://themeteorbook.com'
     }
+    {
+      title: 'Meteor Docs'
+      author: 'Tom Coleman'
+      url: 'http://docs.meteor.com'
+    }
 ]
 
 for p in postsData
-    Posts.insert(p)
+    p.createdAt = new Date().getTime()
+    Posts.update({ title: p.title }, p, { upsert: true })
